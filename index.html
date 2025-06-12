@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Program Hitung Geometri & Fisika</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header>
+  Program Hitung Geometri & Fisika
+</header>
+<main>
+  <label for="formula-select">Pilih Rumus yang Akan Dipakai</label>
+  <select id="formula-select" aria-label="Pilih rumus">
+    <option value="" selected disabled>Pilih...</option>
+    <optgroup label="Luas">
+      <option value="luas_segitiga">Luas Segitiga</option>
+      <option value="luas_balok">Luas Balok</option>
+      <option value="luas_bola">Luas Bola</option>
+      <option value="luas_kerucut">Luas Kerucut</option>
+    </optgroup>
+    <optgroup label="Kecepatan, Jarak, Waktu">
+      <option value="hitung_kecepatan">Hitung Kecepatan</option>
+      <option value="hitung_jarak">Hitung Jarak</option>
+      <option value="hitung_waktu">Hitung Waktu</option>
+    </optgroup>
+  </select>
+
+  <!-- Input groups for each formula -->
+  <form id="form-luas_segitiga" class="input-group" aria-hidden="true" aria-labelledby="formula-select">
+    <label for="alas">Masukkan Alas</label>
+    <input type="number" id="alas" name="alas" min="0" step="any" required />
+    <label for="tinggi">Masukkan Tinggi</label>
+    <input type="number" id="tinggi" name="tinggi" min="0" step="any" required />
+    <button type="submit" aria-label="Hitung luas segitiga">Hitung Luas Segitiga (cm)</button>
+  </form>
+
+  <form id="form-luas_balok" class="input-group" aria-hidden="true" aria-labelledby="formula-select">
+    <label for="panjang">Masukkan Panjang</label>
+    <input type="number" id="panjang" name="panjang" min="0" step="any" required />
+    <label for="lebar">Masukkan Lebar</label>
+    <input type="number" id="lebar" name="lebar" min="0" step="any" required />
+    <label for="tinggi-balok">Masukkan Tinggi</label>
+    <input type="number" id="tinggi-balok" name="tinggi-balok" min="0" step="any" required />
+    <button type="submit" aria-label="Hitung luas balok">Hitung Luas Balok (cm)</button>
+  </form>
+
+  <form id="form-luas_bola" class="input-group" aria-hidden="true" aria-labelledby="formula-select">
+    <label for="jari-jari-bola">Masukkan Jari-jari</label>
+    <input type="number" id="jari-jari-bola" name="jari-jari-bola" min="0" step="any" required />
+    <button type="submit" aria-label="Hitung luas bola">Hitung Luas Bola (cm)</button>
+  </form>
+
+  <form id="form-luas_kerucut" class="input-group" aria-hidden="true" aria-labelledby="formula-select">
+    <label for="diameter-kerucut">Masukkan Diameter</label>
+    <input type="number" id="diameter-kerucut" name="diameter-kerucut" min="0" step="any" required />
+    <small id="r-info" style="font-size: 0.9rem; color:#7B86A1; margin-top:4px; display:block;">Jari-jari (r) akan dihitung otomatis</small>
+    <label for="garis-pelukis">Masukkan Garis Pelukis</label>
+    <input type="number" id="garis-pelukis" name="garis-pelukis" min="0" step="any" required />
+    <button type="submit" aria-label="Hitung luas kerucut">Hitung Luas Kerucut (cm)</button>
+  </form>
+
+  <form id="form-hitung_kecepatan" class="input-group" aria-hidden="true" aria-labelledby="formula-select">
+    <label for="jarak">Masukkan Jarak</label>
+    <input type="number" id="jarak" name="jarak" min="0" step="any" required />
+    <label for="waktu">Masukkan Waktu</label>
+    <input type="number" id="waktu" name="waktu" min="0" step="any" required />
+    <button type="submit" aria-label="Hitung kecepatan">Hitung Kecepatan (cm)</button>
+  </form>
+
+  <form id="form-hitung_jarak" class="input-group" aria-hidden="true" aria-labelledby="formula-select">
+    <label for="kecepatan">Masukkan Kecepatan</label>
+    <input type="number" id="kecepatan" name="kecepatan" min="0" step="any" required />
+    <label for="waktu">Masukkan Waktu</label>
+    <input type="number" id="waktu" name="waktu" min="0" step="any" required />
+    <button type="submit" aria-label="Hitung jarak">Hitung Jarak (cm)</button>
+  </form>
+
+  <form id="form-hitung_waktu" class="input-group" aria-hidden="true" aria-labelledby="formula-select">
+    <label for="jarak">Masukkan Jarak</label>
+    <input type="number" id="jarak" name="jarak" min="0" step="any" required />
+    <label for="kecepatan">Masukkan Kecepatan</label>
+    <input type="number" id="kecepatan" name="kecepatan" min="0" step="any" required />
+    <button type="submit" aria-label="Hitung Waktu">Hitung Waktu (cm)</button>
+  </form>
+
+  
+  <div id="result" class="result" aria-live="polite" role="status" style="display:none;"></div>
+</main>
+
+<footer>
+  &copy; 2025 Program Hitung - Semua Hak Dilindungi
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
